@@ -46,11 +46,12 @@ action.update({
    'res_id': self.id,
    'views': [(False, 'form')],
 })
-action["context"].setdefault("params", {})
-action["context"]["params"]["button_name"] = "Sales"
-action["context"]["params"]["button_icon"] = "fa-eye"
+action["context"] = {"params": {"button_name": "Sales", "button_icon": "visibility"}}
 self.env.user.notify_info('My information message', action=action)
 ```
+
+`button_icon` is a Material Symbols icon name (for example `visibility`
+or `open_in_new`). Font Awesome names such as `fa-eye` are ignored.
 
 ![](../static/img/notifications_screenshot.gif)
 
